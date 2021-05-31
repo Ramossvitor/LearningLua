@@ -202,3 +202,228 @@ print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 for position in pairs(lista_1) do
     print(position .. ": " .. lista_1[position])
 end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+-- Map, Reduce, Filter
+-- Map
+cotacao_dolar = 5.22
+
+prices = {100., 500., 250., 135.}
+
+for position, value in pairs(prices) do
+    print(position .. ": Em dolar: U$" .. value)
+    print(position .. ": Em Reais: R$" .. value * cotacao_dolar)
+    print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- Somando valores da lista
+valores_1 = {30, 20, 10}
+
+sum = 0
+
+for _, value in pairs(valores_1) do
+    print(sum)
+    sum = sum + value
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+print("Somados os valores da lista chegamos ao: " .. sum)
+
+-- Reduce, first e last
+
+lista_3 = {10, 40, 30}
+
+first = nil
+
+last = nil
+
+for _, value in pairs(lista_3) do
+    last = value
+    if first == nil then
+        first = value
+        break
+    end
+end
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+print("1: " .. first)
+
+for _, value in pairs(lista_3) do
+    last = value
+end
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+print("3: " .. last)
+
+-- Reduce, count e average
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+lista_4 = {20, 13.32, 16.22, 13}
+
+count = 0
+sum_1 = 0
+
+for _, value in pairs(lista_4) do
+    count = count + 1
+    sum_1 = sum_1 + value
+end
+
+media = sum_1 / count
+print("Soma dos valores: " .. sum_1)
+print("Quantidade de valores: " .. count)
+print("Media de valores: " .. media)
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- Filter
+lista_5 = {2, 6, 9, 15, 10, 21}
+result_7 = {}
+
+for _, value in pairs(lista_5) do
+    if value >= 10 then
+        table.insert(result_7, value)
+    end
+end
+
+for _, value in pairs(result_7) do
+    print("Os valores maiores que 10: " .. value)
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- Map, reduce, filter
+dolar_1 = {10.75, 25, 100}
+
+mapped = {}
+
+for _, value in pairs(dolar_1) do
+    table.insert(mapped, value * cotacao_dolar)
+end
+
+limit = 200.0
+
+filtered = {}
+
+for _, value in pairs(mapped) do
+    if value <= limit then
+        table.insert(filtered, value)
+    end
+end
+
+sum_2 = 0
+
+for _, value in pairs(filtered) do
+    sum_2 = sum_2 + value
+end
+
+for ordem, value in pairs(filtered) do
+    print("Compra " .. ordem .. ": " .. value)
+end
+
+print("O valor total da suas compras: " .. sum_2)
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+putlist = 4
+lista_6 = {2, putlist, 4.5, "a", nil, true, false}
+
+for ordem, value in pairs(lista_6) do
+    print(ordem .. ": " .. tostring(value))
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- matriz
+
+matrix = {
+{"a", "b", "c"},
+{"d", "e", "f"},
+{"g", "h", "i"}}
+
+print(matrix[3][2])
+
+for index, line in pairs(matrix) do
+    print("Linha " .. index .. ":")
+    for _, coluna in pairs(line) do
+        print(coluna)
+    end
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+lista_7 = {
+    a = 10,
+    b = 20
+}
+
+print(lista_7["a"])
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+lista_8 = {
+    ["color"] = "red"
+}
+
+for key, value in pairs(lista_8) do
+    print(key .. " = " .. value)
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+products = {
+    { name = "apPle", price = 2.48},
+    { name = "oraNGe", price = 5.31}
+}
+
+for _, product in pairs(products) do
+    capitalizandolen_1 = #product.name
+    capitalizando_1 = string.sub(product.name, 1, 1)
+    capitalizando_2 = string.sub(product.name, 2, capitalizandolen_1)
+    capitalizada_1 = string.upper(capitalizando_1) .. string.lower(capitalizando_2)
+    print(capitalizada_1 .. " R$" .. product.price)
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- Pacote table
+
+lista_9 = {1, 2, 3}
+
+table.insert(lista_9, 1, 4) -- insere aonde você quiser da lista, primeiro 
+
+for _, value in pairs(lista_9) do
+    print(value)
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- concat
+lista_10 = {"A", "B", "C"}
+
+result_8 = table.concat(lista_10, ":")
+
+print(result_8)
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- Sort
+lista_11 = {"C", "D", "B", "A"}
+
+table.sort(lista_11)
+
+for _, value in pairs(lista_11) do
+    print(value)
+end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- Remove
+lista_12 = {1, 2, 3, 4, 5, 6, 7}
+
+table.remove(lista_12, 3) -- O VALOR PARA REMOVER É O NUMERO DA ORDEM DE ONDE ELE ESTÁ, E NÃO O QUE ELE É
+
+for _, value in pairs(lista_12) do
+    print(value)
+end
