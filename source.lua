@@ -427,3 +427,89 @@ table.remove(lista_12, 3) -- O VALOR PARA REMOVER É O NUMERO DA ORDEM DE ONDE E
 for _, value in pairs(lista_12) do
     print(value)
 end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- Functions
+function sum(a, b)
+    result_9 = a + b
+
+    return result_9
+end
+
+print(sum(2, 4))
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+-- Função para capitalizar
+function capitalizante(word)
+    first_letter = string.sub(word, 1, 1)
+    outrasletras = string.sub(word, 2, #word)
+    
+    return (
+        string.upper(first_letter) .. string.lower(outrasletras)
+    )
+end
+
+print(capitalizante("AMaRelO"))
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+function minhafuncao(param)
+    return param
+end
+
+print(minhafuncao)
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+function validate(value)
+    if value < 10 then
+        error('Menor que 10')
+    end
+end
+
+validate(11)
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+print("CLI")
+-- CLI
+-- Command Line Interface
+for index, value in pairs(arg) do
+    print(index, value)
+end
+-- É possivel colocar args ao executar o lua, basta dar um espaço e colocar, neste caso vou colocar verde e amarelo e vai aparecer os dois na tela
+
+print(arg[1])
+print(arg[2]) -- se não colocar nada na hora de executar, irá aparecer nil
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+-- lua source.lua COMMAND 10 20
+
+comando_1 = arg[1]
+index_1 = arg[2]
+index_2 = arg[3]
+
+--if comando_1 == "soma" then
+--    if index_1 == nil and index_2 == nil then
+--        print("Coloque numeros!")
+--    else
+--        print(index_1 + index_2)
+--    end
+--elseif comando_1 == "subtrair" then
+--    print(index_1 - index_2)
+--elseif comando_1 == "multiplicar" then
+--    print(index_1 * index_2)
+--elseif comando_1 == "dividir" then
+--    print(index_1 / index_2)
+--else
+--    print("Ainda não reconheco este comando!")
+--end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+-- Require
+soma = require('soma')
+
+if comando_1 == "soma" then
+   print(soma(index_1, index_2))
+else
+    print("Comando desconhecido!")
+end
