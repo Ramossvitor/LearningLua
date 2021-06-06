@@ -506,10 +506,26 @@ index_2 = arg[3]
 
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 -- Require
-soma = require('soma')
+--soma = require('soma')
+--
+--if comando_1 == "soma" then
+--   print(soma(index_1, index_2))
+--else
+--    print("Comando desconhecido!")
+--end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+operations = require('operations')
 
 if comando_1 == "soma" then
-   print(soma(index_1, index_2))
+    print(operations.add(index_1, index_2))
+elseif comando_1 == "subtrair" then
+    print(operations.subtract(index_1, index_2))
+elseif comando_1 == "multiplicar" then
+    print(operations.multiply(index_1, index_2))
+elseif comando_1 == "dividir" then
+    print(operations.divide(index_1, index_2))
 else
     print("Comando desconhecido!")
 end
