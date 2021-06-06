@@ -517,6 +517,7 @@ print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 
 operations = require('operations')
+email = require('email')
 
 if comando_1 == "soma" then
     print(operations.add(index_1, index_2))
@@ -526,6 +527,10 @@ elseif comando_1 == "multiplicar" then
     print(operations.multiply(index_1, index_2))
 elseif comando_1 == "dividir" then
     print(operations.divide(index_1, index_2))
+elseif comando_1 == "validar" then
+    print(email.validate(index_1))
 else
     print("Comando desconhecido!")
 end
+
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
